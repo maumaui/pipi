@@ -1,0 +1,73 @@
+import time
+import tkinter as tk
+
+def clear_window():
+    window = tk.Tk()
+    window.withdraw()
+    window.update()
+
+# 1 Start the program
+# Create the window
+window = tk.Tk()
+window.title("Hacking")
+window.geometry("600x500")
+window.configure(bg="black")
+
+# 2 Display the header
+print("DEBUG MODE")
+time.sleep(0.3)
+attempts_left = 1
+print(f"{attempts_left} ATTEMPT(S) LEFT\n")
+time.sleep(0.3)
+
+# 3 Display the password list
+print("LIST OF PASSWORDS:")
+passwords = [
+    "PROVIDE",
+    "SETTING",
+    "CANTINA",
+    "CUTTING",
+    "HUNTERS",
+    "SURVIVE",
+    "HEARING",
+    "HUNTING",
+    "REALIZE",
+    "NOTHING",
+    "OVERLAP",
+    "FINDING",
+    "PUTTING",
+]
+for password in passwords:
+    print(password)
+    time.sleep(0.3)
+print()
+
+# 4 Prompt for guess
+print("ENTER PASSWORD > ")
+password = input()
+time.sleep(0.3)
+
+# 5 Enter the correct password, HUNTING, and press the enter key
+if password == "HUNTING":
+    clear_window()
+    print("LOGIN SUCCESSFUL")
+    time.sleep(0.3)
+else:
+    attempts_left -= 1
+    time.sleep(0.3)
+
+    # 6 Display failure outcome
+    print(f"LOGIN FAILURE - {attempts_left} ATTEMPT(S) LEFT")
+    time.sleep(0.3)
+    if attempts_left == 0:
+        print("TERMINAL LOCKED")
+        print()
+        print("PLEASE CONTACT AN ADMINISTRATOR")
+        print()
+        time.sleep(0.3)
+
+# 7 Press the enter key to end the program
+input("PRESS ENTER TO EXIT")
+window.destroy()
+
+# 8 Program ends
